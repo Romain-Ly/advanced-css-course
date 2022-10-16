@@ -40,6 +40,11 @@ body {
     height: 35px;
 }
 
+.logo-box:hover .logo {
+    animation: moveInRight 1s ease-in;
+}
+
+
 .text-box {
     position: absolute;
     top: 50%;
@@ -50,6 +55,8 @@ body {
 .heading-primary {
     color: #ffffff;
     text-transform: uppercase;
+
+    backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -57,6 +64,12 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation: moveInLeft 1s;
+    animation-timing-function: ease-out;
+    /*
+    animation-iteration-count: 2;
+    animation-delay: 3s;
+    */
 }
 
 .heading-primary-sub {
@@ -64,4 +77,40 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17px;
+
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(+10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(+100px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
